@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <div ng-controller="padreController">
+    <button ng-click="logPadre()" >Padre </button>
+                <p  ng-bind="padre"></p>
+    <div ng-controller="hijoController">
+      <button ng-click="logHijo()">Hijo</button>
+        <p  ng-bind="hijo"></p>
+      <div ng-controller="nietoController">
+        <button ng-click="logNieto()" >Nieto</button>
+          <p  ng-bind="nieto"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="lib/angular.js"></script>
+  <script>
+    var jareina = angular.module('jareina', []);
+
+    jareina.controller('padreController', ['$scope', function($scope) {
+      $scope.mensaje = 'Texto desde el controllador padre';
+      $scope.logPadre = function() {
+        $scope.padre = $scope.mensaje;
+      }
+    }]);
+
+    jareina.controller('hijoController', ['$scope', function($scope) {
+      $scope.mensaje = 'Texto desde el controllador hijo';
+      $scope.logHijo = function() {
+        $scope.hijo = $scope.mensaje;
+      }
+    }]);
+
+    jareina.controller('nietoController', ['$scope', function($scope) {
+      $scope.mensaje = 'Texto desde el controllador nieto';
+      $scope.logNieto= function() {
+        $scope.nieto = $scope.mensaje;
+      }
+    }]);
+  </script>
+</body>
+
+</html>

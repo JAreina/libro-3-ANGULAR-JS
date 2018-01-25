@@ -225,9 +225,17 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
   res.write('<!doctype html>\n');
   res.write('<title>' + escapeHtml(path) + '</title>\n');
   res.write('<style>\n');
-  res.write('  ol { list-style-type: none; font-size: 1.2em; }\n');
+  res.write('  body { background-color:tomato; color:white }\n');
+      res.write('  ol  { background-color:black; padding:6%; }\n');
+  res.write('  ol { list-style-type: none; font-size: 1.2em; color:tomato; }\n');
+    res.write('  ol li a { color:tomato; }\n');
+    res.write('  ol li a:visited { color:grey; }\n');
+      res.write('  ol li a { display:block; }\n');
+    res.write('  ol li a:hover { color:white; }\n');
+      res.write('  ol li a:hover li { background-color:white; }\n');
   res.write('</style>\n');
-  res.write('<h1>Directory: ' + escapeHtml(path) + '</h1>');
+      res.write('<body>');
+  res.write('<h5>DIRECTORIO JAreina: ' + escapeHtml(path) + '</h5>');
   res.write('<ol>');
   files.forEach(function(fileName) {
     if (fileName.charAt(0) !== '.') {
@@ -237,6 +245,7 @@ StaticServlet.prototype.writeDirectoryIndex_ = function(req, res, path, files) {
     }
   });
   res.write('</ol>');
+    res.write('</body>');
   res.end();
 };
 
