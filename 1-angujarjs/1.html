@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+ <html lang="es" ng-app>
+ <head>
+ <meta charset="UTF-8">
+ <title>{{Respuesta}}</title>
+ <style>
+   body{
+       background-color: rgb(8, 2, 2);
+       color: tomato;
+       text-align: center;
+       font-family: monospace;
+   }
+ </style>
+ </head>
+<body >
+<div class="container">
+     ES VERDAD?
+ <input type="checkbox" ng-model="respuesta">
+
+ <div ng-show="respuesta">
+ <h2>ERROR, PORQUE ES MENTIRA</h2>
+ </div>
+ </div>
+ <script src="lib/angular.js"></script>
+ </body>
+ </html>

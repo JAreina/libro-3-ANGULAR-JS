@@ -1,0 +1,99 @@
+
+
+
+
+http://www.angularjs.org
+
+ Proyecto en Github https://github.com/angular/angular.js
+
+ http://ngmodules.org
+
+
+
+
+-------------------------------
+
+SERVIDOR :    $ http-server 
+
+npm install -g http-server 
+
+-------------------------------
+
+
+
+BOWER  : GESTOR DE DEPENDENCIAS
+
+$  npm install -g bower
+
+
+
+YARN  :  GESTOR NUEVO RECOMENDADO    yarnpkg.com
+
+
+---------------------
+
+INICIAR UN PROYECTO ---------------------------------------------------
+
+BOWER
+----------
+package.json   ____________>     bower init
+
+
+$ bower install --save angular
+
+
+carpeta: bower_components
+
+
+-----------------------------------
+
+Directivas : extender la sintaxis HTML
+
+
+iNYECTICCION DE DEPENDENCIAS : COSTRUCTORES DE CONTROLADORES PIDEN OBJETOS QUE NECESITAN
+                                angular los inyecta y controllador los utiliza
+
+
+CONTROLLADOR: RECIBE PETICIONES Y ENTREGA RESPUESTAS. nO GENERA RESPUESTAS.
+
+
+***************************************************
+
+La app se organiza en módulos.
+
+
+OBTENER angularjs
+---------------------------
+
+- DESCARGA EN angularjs.org
+- vía CDN 
+- POR npm
+
+
+
+DIRECTIVVA     ng-app   (clave/valor cuando hay definido un módulo)
+
+angularjs se ejecuta en el ámbito indicado por nosotros
+
+si aparece en tag body afecta a todo el body
+
+
+--------------
+
+
+ng-model      --- definicion del modelo, crea una variable 
+
+ng-hide  --- oculta elemento
+
+ng-show  --- muestra
+
+
+Scope:     componente que une controlladores y vistas
+
+
+
+
+
+
+
+
