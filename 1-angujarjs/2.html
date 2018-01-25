@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="es" >
+<html lang="es"  ng-app="jareina" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-  
+
 </head>
-<body ng-app>
-        
-     <div class="container" ng-controller="controlador">
+<body ng-controller="jareinaController">
+
+     <div class="container" ng-controller="jareinaController">
          <h1 ng-bind="mensaje"></h1>
          </div>
 
          <script src="lib/angular.js"></script>
          <script>
-        function controlador($scope) {
+        angular.module('jareina',[]).controller('jareinaController',['$scope', function($scope) {
          $scope.mensaje = 'Mensaje desde el controlador';
-        }
+       }]);
      </script>
         </body>
 </html>
