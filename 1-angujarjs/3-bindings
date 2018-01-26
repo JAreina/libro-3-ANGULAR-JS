@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina3">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+  <script>
+    var jareina = angular.module('jareina3', []);
+
+    jareina.controller('padreController', ['$scope', function($scope) {
+
+      $scope.mostrar = false;
+
+      $scope.unaVez = function(a) {
+        $scope.mensaje = a;
+        $scope.mostrar = true;
+      }
+      $scope.deNuevo = function() {
+        $scope.mostrar = false;
+        $scope.mensaje="";
+      }
+
+    }]);
+  </script>
+</head>
+
+<body ng-controller="padreController">
+
+  <div>
+
+    <!-- one time binding  ::mensaje -->
+    <p ng-show="mostrar">{{mensaje}}</p>
+    <input ng-show="!mostrar" type="text" ng-model="mensaje" placeholder="escribe">
+    <button ng-show="!mostrar" type="button" name="button" ng-click="unaVez(mensaje)">OK</button>
+    <button ng-show="mostrar" type="button" name="button" ng-click="deNuevo()">DE NUEVO</button>
+  </div>
+
+
+
+</body>
+
+</html>
