@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina3">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+  <script>
+    var jareina = angular.module('jareina3', []);
+
+    jareina.controller('padreController', ['$scope', function($scope) {
+
+      $scope.errorMinimo = false;
+      $scope.coincidencia=false;
+      $scope.$watchGroup(['password', 'password2'], function(nuevos, anterior) {
+        if (!nuevos) return;
+
+        if (nuevos[0] === nuevos[1]) {
+          $scope.coincidencia = true;
+        } else {
+          $scope.coincidencia = false;
+        }
+      })
+
+    }]);
+  </script>
+</head>
+
+<body ng-controller="padreController">
+
+  <div>
+
+    <form action="#">
+      Contraseña: <input type="password" ng-model="password">
+      Repetir: <input type="password" ng-model="password2">
+      
+      <p ng-show="!coincidencia">Error: Las contraseñas no coinciden</p>
+    </form>
+
+  </div>
+
+
+
+</body>
+
+</html>
