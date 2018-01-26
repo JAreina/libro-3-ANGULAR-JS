@@ -12,7 +12,7 @@
 
     jareina.controller('padreController', ['$scope', function($scope) {
 
-      $scope.errorMinimo = false;
+
       $scope.coincidencia=false;
       $scope.$watchGroup(['password', 'password2'], function(nuevos, anterior) {
         if (!nuevos) return;
@@ -35,7 +35,7 @@
     <form action="#">
       Contraseña: <input type="password" ng-model="password">
       Repetir: <input type="password" ng-model="password2">
-      
+
       <p ng-show="!coincidencia">Error: Las contraseñas no coinciden</p>
     </form>
 
