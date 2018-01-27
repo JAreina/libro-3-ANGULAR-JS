@@ -1,8 +1,7 @@
+var funcion = function($scope) {
 
- angular.module('jareina3.padre',[]).controller('padreController', ['$scope', function($scope) {
 
-
-  $scope.coincidencia=false;
+  $scope.coincidencia = false;
   $scope.$watchGroup(['password', 'password2'], function(nuevos, anterior) {
     if (!nuevos) return;
 
@@ -13,4 +12,7 @@
     }
   })
 
-}]);
+};
+
+funcion.$inject = ['$scope'];
+angular.module('jareina3.padre', []).controller('padreController', funcion);
