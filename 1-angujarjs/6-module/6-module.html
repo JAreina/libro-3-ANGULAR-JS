@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina3">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+    <script src="app.js"></script>
+  <script src="controller.js"></script>
+</head>
+
+<body ng-controller="padreController">
+
+  <div>
+<h1>app,controller y vista en distintos archivos </h1>
+
+<h2>console.dir(window.angular)</h2>
+    <form action="#">
+      Contraseña: <input type="password" ng-model="password">
+      Repetir: <input type="password" ng-model="password2">
+
+      <p ng-show="!coincidencia">Error: Las contraseñas no coinciden</p>
+    </form>
+
+  </div>
+
+
+
+</body>
+
+</html>
