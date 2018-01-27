@@ -8,7 +8,12 @@
 </head>
 
 <body>
+
+
+
   <div class="container" ng-controller="PlaylistController">
+    <h1>constant()   -- Constant.js  --inyectado en controller</h1>
+    {{esMiConstante._token}}
     <ul>
       <li ng-repeat="titulo in playlist"> {{ titulo }} </li>
     </ul>
@@ -23,10 +28,12 @@
   </div>
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/Config/Constants.js"></script>
   <script src="js/Services/PlaylistProvider.js"></script>
   <script src="js/Controllers/PlaylistController.js"></script>
   <script src="js/Controllers/PlaylistMetodosController.js"></script>
 <script src="js/Config/Playlist.js"></script>
+
 </body>
 
 </html>

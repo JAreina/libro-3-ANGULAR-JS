@@ -1,6 +1,4 @@
-/**
- * Created by Maikel Rivero Dorta mriverodorta@gmail.com on 7/08/14.
- */
+
 'use strict';
-angular.module('jareina') 
-    .constant('CSRF_TOKEN', {_token: 'TOKEN-HERE'});
+angular.module('jareina')
+    .constant('miConstante', {_token: 'esto es una constante'});
