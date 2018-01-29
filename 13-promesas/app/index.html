@@ -19,8 +19,10 @@
  <p>Estado del servicio de Base de Datos: {{ db }}</p>
  <p>Estado de las conexiones seguras: {{ ssl }}</p>
  </div>
-
-
+ <div ng-controller="PromesasController">
+<h1>varias promesas</h1>
+<p ng-repeat="promesas in promesas">TODAS : {{promesas}}</p>
+</div>
 <h1>servicio</h1>
     <ul>
       <li ng-repeat="titulo in playlist"> {{ titulo }} </li>
@@ -40,6 +42,7 @@
   <script src="js/Decorators/Playlists.js"></script>
   <script src="js/Controllers/PlaylistController.js"></script>
   <script src="js/Controllers/PromesaController.js"></script>
+  <script src="js/Controllers/PromesasController.js"></script>
   <script src="js/Controllers/PlaylistMetodosController.js"></script>
 
 </body>
