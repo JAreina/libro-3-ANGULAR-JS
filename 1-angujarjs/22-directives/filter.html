@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-app="miApp" ng-controller="miCtrl">
+  <div class="container">
+    <h1>Biblioteca de CD's.</h1>
+    <input type="search" ng-model="buscar">
+    <ul>
+      <li ng-repeat="cd in cds | filter:buscar">{{ cd }}</li>
+    </ul>
+  </div>
+
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        var cds = [
+          'Songs of Innocence',
+          'Forget the World',
+          'Unlocked', 'True',
+          'The New Daylight',
+          'Lovers on the Sun',
+          'Talking Dreams',
+          'Trouble in paradise'
+        ];
+        $scope.cds = cds;
+      }]);
+  </script>
+</body>
+
+
+</html>
