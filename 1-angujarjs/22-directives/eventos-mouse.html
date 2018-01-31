@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-controller="miCtrl">
+  <div ng-style="style" ng-mousedown="down()" ng-mouseup="up()" ng-mouseenter="enter()" ng-mouseleave="leave()" ng-mousemove="move($event)" ng-mouseover="over()">
+    {{ pos }}
+  </div>
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        $scope.style = {
+          'border': '2px solid black',
+          'width': '200px',
+          'height': '200px',
+          'background-color': 'tomato'
+        };
+        $scope.down = function(e) {
+          console.log('Ejecutado el evento Mousedown');
+        };
+        $scope.up = function(e) {
+          console.log('Ejecutado el evento Mouseup');
+        };
+        $scope.enter = function(e) {
+          console.log('Ejecutado el evento Mouseenter');
+        };
+        $scope.leave = function(e) {
+          console.log('Ejecutado el evento Mouseleave');
+        };
+        $scope.move = function(e) {
+          $scope.pos = 'x: ' + e.x + 'y: ' + e.y;
+        };
+        $scope.over = function(e) {
+          console.log('Ejecutado el evento Mouseover');
+        };
+      }])
+  </script>
+</body>
+
+
+</html>
