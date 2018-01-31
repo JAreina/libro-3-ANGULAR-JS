@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-app="miApp" ng-controller="miCtrl">
+  <div class="container">
+    <form ng-submit="login()">
+      Nombre: <input type="text" ng-model="usuario.nombre"><br> Contraseña: <input type="password" ng-model="usuario.contrasena"> <br>
+      <input type="submit" value="Aceptar">
+    </form>
+  </div>
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        $scope.usuario = {
+          nombre: '',
+          contrasena: ''
+        }
+        $scope.login = function() {
+          //Ejecutar el proceso de login
+          console.log($scope.usuario);
+        }
+      }])
+  </script>
+</body>
+
+
+</html>
