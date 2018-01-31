@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-app="miApp" ng-controller="miCtrl">
+  <div class="container">
+    Listado de compra.
+    <ul>
+      <li ng-repeat="compra in musica">
+        <strong>Artista:</strong> {{ compra.artista }}
+        <strong>CD</strong> {{ compra.cd }}
+      </li>
+    </ul>
+  </div>
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        var musica = [{
+            artista: 'U2',
+            cd: 'Songs of Innocence'
+          },
+          {
+            artista: 'Afrojack',
+            cd: 'Forget the World'
+          },
+          {
+            artista: 'Alexandra Stan',
+            cd: 'Unlocked'
+          },
+          {
+            artista: 'Avicii',
+            cd: 'True'
+          },
+          {
+            artista: 'Dash Berlin',
+            cd: 'The New Daylight'
+          },
+          {
+            artista: 'David Guetta',
+            cd: 'Lovers on the Sun'
+          },
+          {
+            artista: 'Echosmith',
+            cd: 'Talking Dreams'
+          },
+          {
+            artista: 'La Roux',
+            cd: ' Trouble in paradise'
+          }
+        ];
+        $scope.musica = musica;
+      }]);
+  </script>
+</body>
+
+
+</html>
