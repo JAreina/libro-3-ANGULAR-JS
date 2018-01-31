@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+  <style>
+    .flotar {
+      float: right;
+      padding: 0 10px;
+    }
+
+    .fondoRojo {
+      background-color: tomato;
+    }
+
+    .bordesRedondeados {
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  </style>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-app="miApp" >
+  <input type="checkbox" ng-model="flotar">Flotar
+  <input type="checkbox" ng-model="fondoRojo">Fondo Rojo
+  <input type="checkbox" ng-model="bordesRedondeados">Bordes deados
+  <div ng-class="{
+   'flotar':flotar,
+   'fondoRojo': fondoRojo,
+   'bordesRedondeados': bordesRedondeados}">
+    <h1>Ejemplo de los usos de ng-class</h1>
+  </div>
+  <script>
+    angular.module('miApp', [])
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+  <style>
+    .flotar {
+      float: right;
+      padding: 0 10px;
+    }
+
+    .fondoRojo {
+      background-color: tomato;
+    }
+
+    .bordesRedondeados {
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  </style>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-app="miApp" ng-controller="miCtrl">
+  <div ng-class="generarClases()">
+    <h1>Ejemplo de los usos de ng-class</h1>
+  </div>
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        var clases = ['flotar', 'fondoRojo', 'bordesRedondeados'];
+        $scope.generarClases = function() {
+          //return clases.join(' ');
+           return clases;
+         }
+      }])
+  </script>
+</body>
+
+</html>
