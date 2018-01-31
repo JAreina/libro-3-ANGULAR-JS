@@ -9,13 +9,20 @@
 </head>
 <body>
 <primera-directiva></primera-directiva>
-
+<segunda-directiva></segunda-directiva>
+<div segunda-directiva></div>
 <script>
   angular.module('jareina', [])
    .directive('primeraDirectiva', [function () {
   return {
    restrict: 'E',
-   template: '<p>DIRECTIVA CREADA</p>'
+   template: '<p>DIRECTIVA CREADA COMO ELEMENTO</p>'
+   };
+   }])
+   .directive('segundaDirectiva', [function () {
+  return {
+   restrict: 'EA',
+   template: '<p>SEGUNDA DIRECTIVA CREADA COMO ATRIBUTO Y ELEMENTO</p>'
    };
    }])
 </script>
