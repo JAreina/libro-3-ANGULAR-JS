@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-controller="miCtrl">
+  <input type="text" ng-model="input" ng-change="cambio()" placeholder="Escribe aquí"> {{ texto }}
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        $scope.cambio = function() {
+          $scope.texto = $scope.input;
+        }
+      }])
+  </script>
+</body>
+
+
+</html>

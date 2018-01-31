@@ -1,0 +1,8 @@
+ng-href
+ng-src
+ng-srcset
+ng-blur
+ng-copy,ng-cut, ng-paste
+ng-checked
+ng-readonly
+ng-selected
