@@ -22,7 +22,8 @@
    .directive('segundaDirectiva', [function () {
   return {
    restrict: 'EA',
-   template: '<p>SEGUNDA DIRECTIVA CREADA COMO ATRIBUTO Y ELEMENTO</p>'
+   template: '<p>SEGUNDA DIRECTIVA CREADA COMO ATRIBUTO Y ELEMENTO</p>',
+   replace: true//se reemplaza la directiva por el tag del template si está a true
    };
    }])
 </script>
