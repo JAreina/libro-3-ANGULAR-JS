@@ -11,13 +11,20 @@
 
 <body data-ng-controller="UsuariosCtrl">
   <div data-info></div>
+  <div data-info data-usuario="usuario1"></div>
+ <div data-info data-usuario="usuario2"></div>
   <script>
     angular.module('jareina', [])
       .controller('UsuariosCtrl', ['$scope', function($scope) {
-        $scope.usuario = {
+        $scope.usuario1 = {
           nombre: 'Eva',
           apellido: 'Madrid',
           email: 'eva.madrid@example.com'
+        };
+        $scope.usuario2 = {
+          nombre: 'Eva2',
+          apellido: 'Madrid2',
+          email: 'eva.madrid2@example.com'
         };
       }])
       .directive('info', [function() {
@@ -25,8 +32,11 @@
         {{usuario.nombre}} {{usuario.apellido}}</a>`;
         return {
           restrict: 'A',
+          scope:{
+            usuario : '=usuario'
+          },
           template: plantilla
-          
+
         };
       }])
   </script>
