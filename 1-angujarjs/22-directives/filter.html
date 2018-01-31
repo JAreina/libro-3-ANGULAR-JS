@@ -15,7 +15,9 @@
     <h1>Biblioteca de CD's.</h1>
     <input type="search" ng-model="buscar">
     <ul>
-      <li ng-repeat="cd in cds | filter:buscar">{{ cd }}</li>
+      <li ng-repeat="cd in cds | filter:buscar">
+{{$index}}
+        {{ cd }}</li>
     </ul>
   </div>
 
