@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ng-class</title>
+
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-controller="miCtrl">
+  <input type="text" ng-keydown="keydown($event)" ng-keypress="keypress($event)" ng-keyup="keyup($event)">
+
+
+  {{mensaje}}
+  {{evento}}
+  <script>
+    angular.module('miApp', [])
+      .controller('miCtrl', ['$scope', function($scope) {
+        $scope.keydown = function(e) {
+        $scope.mensaje= 'Key down - Key Code: ' + e.keyCode, 'altKey: ' + e.altKey;
+        $scope.evento = e;
+        };
+        $scope.keypress = function(e) {
+        $scope.mensaje='Key press - Key Code: ' + e.keyCode, 'altKey: ' + e.altKey;
+        $scope.evento = e;
+        };
+        $scope.keyup = function(e) {
+          $scope.mensaje='Key up - Key Code: ' + e.keyCode, 'altKey: ' + e.altKey;
+          $scope.evento = e;
+        };
+      }])
+  </script>
+</body>
+
+
+</html>
