@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body data-ng-controller="UsuariosCtrl">
+  <div data-info></div>
+  <script>
+    angular.module('jareina', [])
+      .controller('UsuariosCtrl', ['$scope', function($scope) {
+        $scope.usuario = {
+          nombre: 'Eva',
+          apellido: 'Madrid',
+          email: 'eva.madrid@example.com'
+        };
+      }])
+      .directive('info', [function() {
+        var plantilla = `MANDA EMAIL: <a href="mailto:{{usuario.email}}">
+        {{usuario.nombre}} {{usuario.apellido}}</a>`;
+        return {
+          restrict: 'A',
+          template: plantilla
+          
+        };
+      }])
+  </script>
+</body>
+
+</html>
