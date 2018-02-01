@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body data-ng-controller="UsuariosCtrl">
+  <div data-info></div>
+  <div data-info data-usuario="usuario1"></div>
+  <div data-info data-usuario="usuario2"></div>
+
+
+  <h1>@ haraá visibles en scope atributos de la directiva como propiedades del scope
+  vinculo de una sola via del scope a la directiva </h1>
+  <mi-mensaje titulo="Error" tipo="warning" mensaje="Error 404, El contenido que usted busca no ha sido encontrado.">
+  </mi-mensaje>
+  <script>
+    angular.module('jareina', [])
+      .controller('UsuariosCtrl', ['$scope', function($scope) {
+        $scope.usuario1 = {
+          nombre: 'Eva',
+          apellido: 'Madrid',
+          email: 'eva.madrid@example.com'
+        };
+        $scope.usuario2 = {
+          nombre: 'Eva2',
+          apellido: 'Madrid2',
+          email: 'eva.madrid2@example.com'
+        };
+      }])
+      .directive('info', [function() {
+        var plantilla = `MANDA EMAIL: <a href="mailto:{{usuario.email}}">
+        {{usuario.nombre}} {{usuario.apellido}}</a>`;
+        return {
+          restrict: 'A',
+          scope: {
+            usuario: '=usuario'
+          },
+          template: plantilla
+          //  //  = vincula los datos hacindolos visibles en el scope
+        };
+      }])
+
+      .directive('miMensaje', [function() {
+        var plantilla = ` <div class="alert-{{tipo}}">
+        <h2>{{titulo}} {{mensaje}}</h2>`;
+        return {
+          restrict: 'EA',
+          scope: {
+            tipo: '@',
+            titulo: '@',
+            mensaje: '@'
+          },
+          template: plantilla,
+          replace: true
+          //  = vincula los datos hacindolos visibles en el scope
+          // @ haraá visibles en scope atributos de la directiva como propiedades del scope
+        };
+      }])
+  </script>
+</body>
+
+</html>
