@@ -19,6 +19,10 @@
   vinculo de una sola via del scope a la directiva </h1>
   <mi-mensaje titulo="Error" tipo="warning" mensaje="Error 404, El contenido que usted busca no ha sido encontrado.">
   </mi-mensaje>
+
+  <h1>OTRO EJEMPLO @ SE MODIFICA LA DIRECTIVA DESDE E SCOPE NO AL REVES</h1> Mensaje: <input type="text" data-ng-model="mensaje">
+  <mi-mensaje titulo="Error" tipo="warning" mensaje="{{ mensaje }}">
+  </mi-mensaje>
   <script>
     angular.module('jareina', [])
       .controller('UsuariosCtrl', ['$scope', function($scope) {
@@ -48,7 +52,13 @@
 
       .directive('miMensaje', [function() {
         var plantilla = ` <div class="alert-{{tipo}}">
-        <h2>{{titulo}} {{mensaje}}</h2>`;
+        <h2>{{titulo}} {{mensaje}}</h2>
+        <P> INPUT DESDE DIRECTIVA  NO MODIFICA SCOPE</P>
+        <input type="text" data-ng-model="mensaje"></div>
+
+
+
+        `;
         return {
           restrict: 'EA',
           scope: {
