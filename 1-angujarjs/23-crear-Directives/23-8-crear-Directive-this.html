@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body>
+
+  <h1>this: exponer metodos a otras directivas , controllerAs: para usar this en la propia directiva </h1>
+
+  <div mi-ejemplo></div>
+  <script>
+    angular.module('jareina', [])
+      .directive('miEjemplo', [function() {
+        return {
+          restrict: 'A',
+          template: '<div>{{ctrl.mensaje}}</div>',
+          controllerAs: 'ctrl',
+          controller: function() {
+            this.mensaje = 'La variable mensaje está expuesta para ser utilizada '
+            this.mensaje += 'fuera del controlador y a la vez dentro de la misma directiva.';
+          }
+        };
+      }])
+  </script>
+</body>
+
+</html>
