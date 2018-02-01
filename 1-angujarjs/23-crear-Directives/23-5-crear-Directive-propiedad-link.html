@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body >
+
+  <h1>porpiedad link modificar dom tipo jquery</h1>
+  <mi-titular texto="Lorem ipsum dolor sit amet, consectetur adipisicing elit, s\
+  3 ed do eiusmod
+  4 tempor incididunt ut labore et dolore magna aliqua." especial="Atributo Especi\
+  5 al"></mi-titular>
+  <script>
+    angular.module('jareina', [])
+      .directive('miTitular', [function() {
+        return {
+          restrict: 'E',
+          template: '<div><h1>{{texto}}</h1></div>',
+          replace: true,
+          scope: {
+            texto: '@'
+          },
+          link: function(scope, iElement, iAttrs) {
+            console.log(scope.texto);
+            iElement.css('cursor', 'pointer')
+              .on('mouseenter', function(e) {
+                iElement.css('opacity', 0.6);
+              })
+              .on('mouseleave', function(e) {
+                iElement.css('opacity', 1)
+              }).append('<p>-- ' + iAttrs.especial + ' --</p>')
+          }
+        };
+      }])
+  </script>
+</body>
+
+</html>

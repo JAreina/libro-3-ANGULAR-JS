@@ -1,0 +1,10 @@
+<form name="contacto">
+  <label for="titulo">Titulo:</label>
+  <input type="text" id="titulo" ng-model="titulo"><br>
+  <label for="mensaje">Mensaje:</label>
+  <textarea ng-model="mensaje" id="mensaje" cols="30" rows="10">
+ </textarea><br>
+  <button ng-click="log({msg: 'Titulo: '+titulo+' Mensaje: '+mensaje})">
+ Enviar
+ </button>
+</form>

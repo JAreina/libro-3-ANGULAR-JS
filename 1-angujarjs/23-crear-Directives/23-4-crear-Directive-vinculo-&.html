@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body data-ng-controller="UsuariosCtrl">
+
+  <h1>vinculo & para delegar funciones</h1>
+  <mi-contacto log="log(msg)"></mi-contacto>
+  <script>
+    angular.module('jareina', [])
+      .controller('UsuariosCtrl', ['$scope', function($scope) {
+        $scope.log = function(elemento) {
+          console.log(elemento)
+        }
+      }])
+      .directive('miContacto', [function() {
+        return {
+          restrict: 'E',
+          scope: {
+            log: '&'
+          },
+          templateUrl: '_vistas/contacto.html',
+          replace: true
+        };
+      }])
+  </script>
+</body>
+
+</html>
