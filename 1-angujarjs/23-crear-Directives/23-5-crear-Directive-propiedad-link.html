@@ -9,13 +9,17 @@
   <script src="lib/angular.js"></script>
 </head>
 
-<body >
+<body>
 
   <h1>porpiedad link modificar dom tipo jquery</h1>
   <mi-titular texto="Lorem ipsum dolor sit amet, consectetur adipisicing elit, s\
   3 ed do eiusmod
   4 tempor incididunt ut labore et dolore magna aliqua." especial="Atributo Especi\
   5 al"></mi-titular>
+  <h5>segundo ejemplo</h5>
+  <mi-cita>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur\ adipisci eaque blanditiis minus explicabo voluptas, quo corrupti velit debitis \ quidem necessitatibus ab rem. Quaerat nisi quod sapiente tenetur, perspiciatis d\ ucimus!
+  </mi-cita>
+  <mi-cita>Esta es una segunda cita.</mi-cita>
   <script>
     angular.module('jareina', [])
       .directive('miTitular', [function() {
@@ -35,6 +39,18 @@
               .on('mouseleave', function(e) {
                 iElement.css('opacity', 1)
               }).append('<p>-- ' + iAttrs.especial + ' --</p>')
+          }
+        };
+      }])
+
+
+      .directive('miCita', [function() {
+        return {
+          restrict: 'E',
+          compile: function(iElement, iAttrs) {
+            var plantilla = angular.element('<blockquote></blockquote>');
+            plantilla.append(iElement.contents());
+            iElement.replaceWith(plantilla);
           }
         };
       }])
