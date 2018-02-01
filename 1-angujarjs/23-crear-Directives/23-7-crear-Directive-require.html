@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body>
+
+  <h1>propiedad require - controllador de una directiva</h1>
+
+<div mi-directiva otra-directiva></div>
+  <script>
+    angular.module('jareina', [])
+      .directive('miDirectiva', [function() {
+        return {
+          restrict: 'A',
+          controller: function() {
+            this.log = function() {
+              console.log('Método de la directiva: mi-directiva');
+            };
+          }
+        };
+      }])
+      .directive('otraDirectiva', [function() {
+        return {
+          restrict: 'A',
+          require: 'miDirectiva',
+          link: function(scope, iElement, iAttrs, ctrls) {
+            ctrls.log();
+          }
+        };
+      }])
+  </script>
+</body>
+
+</html>
