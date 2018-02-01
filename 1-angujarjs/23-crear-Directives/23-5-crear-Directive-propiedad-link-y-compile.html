@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body>
+
+  <h1>porpiedad link y compile (compile excluye el uso de link) se pueden usar las dosa la vez compile devuelve la funcion link.  modificar dom tipo jquery</h1>
+  <mi-cita>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur\ adipisci eaque blanditiis minus explicabo voluptas, quo corrupti velit debitis \ quidem necessitatibus ab rem.</mi-cita>
+  <mi-cita data-autor="Juan JAreina">Esta es una segunda cita.</mi-cita>
+  <script>
+    angular.module('jareina', [])
+      .directive('miCita', [function() {
+        return {
+          restrict: 'E',
+          compile: function(iElement, iAttrs) {
+            var plantilla = angular.element('<blockquote></blockquote>');
+            plantilla.append(iElement.contents());
+            iElement.replaceWith(plantilla);
+            return function(scope, iElement, iAttrs) {
+              iElement.css('text-align', 'right');
+              if (iAttrs.autor) {
+                iElement.append('<br><span>Por: ' + iAttrs.autor + '</span>')
+              };
+            };
+          }
+        };
+      }])
+  </script>
+</body>
+
+</html>
