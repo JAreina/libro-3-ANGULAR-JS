@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body >
+
+  <h1>filter limitTo</h1>
+  <div data-ng-controller="ctrl">
+ LIMITE 1:{{ texto | limitTo: 1 }}<br>
+ LIMITE 2: {{ texto | limitTo: -135 }}<br>
+ ARRAY :{{ arreglo | limitTo: 6 }} <br>
+ ARRAY: {{ arreglo | limitTo: -3 }}<br>
+ </div>
+  <script>
+    angular.module('jareina', [])
+      .controller('ctrl', ['$scope', '$filter', function ($scope) {
+ $scope.arreglo = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+ $scope.texto = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do\
+ lorum maxime eum perspiciatis hic corporis sapiente. Ab, provident modi deleniti\
+ assumenda nobis ratione, accusantium porro, necessitatibus similique beatae dol\
+ oremque perferendis tempora!';
+      }])
+  </script>
+</body>
+
+</html>

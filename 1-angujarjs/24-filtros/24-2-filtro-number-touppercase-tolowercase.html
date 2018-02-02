@@ -13,19 +13,22 @@
 
   <h1>filter currency</h1>
   <div>Costo: {{ 1412.99 | currency }}</div>
-   <div>Costo: {{ 728.99 | currency: "€" }}</div>
+  <div>Costo: {{ 728.99 | currency: "€" }}</div>
   <div>Costo: {{ 728.42963 | currency:"€":3 }}</div>
   <div>{{costo}}</div>
   <div>{{costoEuro}}</div>
 
+  <h1>filtro number</h1> {{ 2432.44*332.91 | number }} {{ 2432.44*332.91 | number:5 }}
+
+  <h1>tolowercase - touppercase</h1> {{ "Prueba de texto" | uppercase }}{{ "PRUEBA De TeXtO" | lowercase }}
   <script>
     angular.module('jareina', [])
-    .controller('FiltroCtrl', ['$scope', '$filter', function ($scope, $filter) {
- var costo = 1453.50;
- $scope.costo = $filter('currency')(costo);
- $scope.costoEuro = $filter('currency')(costo, '€');
- console.log($scope.costo,$scope.costoEuro);
- }])
+      .controller('FiltroCtrl', ['$scope', '$filter', function($scope, $filter) {
+        var costo = 1453.50;
+        $scope.costo = $filter('currency')(costo);
+        $scope.costoEuro = $filter('currency')(costo, '€');
+        console.log($scope.costo, $scope.costoEuro);
+      }])
   </script>
 </body>
 
