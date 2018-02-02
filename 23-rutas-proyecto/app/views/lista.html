@@ -1,0 +1,8 @@
+<div ng-controller="listaController">
+    <a href="/nuevo">nuevo</a>
+  <ul>
+    <li data-ng-repeat="contacto in contactos">
+      <a ng-href="/{{$index}}">{{contacto.nombre}}</a>
+    </li>
+  </ul>
+</div>
