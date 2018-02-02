@@ -10,7 +10,8 @@ angular.module('ContactosApp')
           email: $scope.contacto.email,
           tel: $scope.contacto.tel,
         }
-        if (contactosService.crear(contacto)) {
+    
+        if ( contactosService.crear(contacto)) {
           $location.path('/');
         } else {
           console.log('No se ha podido crear el contacto');

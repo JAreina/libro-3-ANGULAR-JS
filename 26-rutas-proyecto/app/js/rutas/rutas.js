@@ -25,7 +25,7 @@ angular.module('ContactosApp')
       })
       .when('/:id/editar', {
         templateUrl: vista('editar'),
-        controller: 'EditarCtrl'
+        controller: 'editarController'
       })
     $locationProvider.html5Mode(true); //activate HTML5 Mode
   }])

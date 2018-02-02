@@ -1,0 +1,20 @@
+<div class="vista" ng-controller="editarController">
+ <h3>Editando a {{contacto.nombre}}</h3>
+ <form  class="formulario" data-ng-submit="guardar()">
+
+
+<div>
+ <label for="nombre">Nombre: </label>
+ <input type="text" id="nombre" data-ng-model="contacto.nombre"></div>
+<div>
+ <label for="email">Email: </label>
+ <input type="email" id="email" data-ng-model="contacto.email"></div>
+<div>
+ <label for="tel">Teléfono: </label>
+ <input type="text" id="tel" data-ng-model="contacto.tel"></div>
+<div>
+ <input  class="boton"  type="submit" value="Guardar">
+ <a  class="boton"  data-ng-click="cancelar()" href="">Cancelar</a></div>
+
+ </form>
+ </div>

@@ -24,8 +24,11 @@ angular.module('ContactosApp')
       borrar: function(id) {
         return contactos.splice(id, 1).length ? true : false;
       },
-      crear: function(contacto){
+      crear: function(contacto) {
         return contactos.push(contacto);
+      },
+      editar: function(id, contacto) {
+        contactos[id] = contacto;
       }
     };
   }])

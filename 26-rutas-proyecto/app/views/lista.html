@@ -1,0 +1,9 @@
+<div ng-controller="listaController" class="vista">
+    <a  class="boton" href="/nuevo">nuevo</a>
+    <input type="search" data-ng-model="buscar.nombre" placeholder="Buscar nombre...">
+  <ul class="lista">
+    <li  class="contacto__lista" data-ng-repeat="contacto in contactos  | filter:buscar">
+      <a  ng-href="/{{$index}}">{{contacto.nombre}}</a>
+    </li>
+  </ul>
+</div>

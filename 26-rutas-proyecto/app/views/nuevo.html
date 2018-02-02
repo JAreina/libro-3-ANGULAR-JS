@@ -1,0 +1,19 @@
+<div class="vista">
+  <h3>Nuevo contacto</h3>
+  <form class="formulario" data-ng-submit="crear()">
+
+<div>
+    <label for="nombre">Nombre: </label>
+    <input type="text" id="nombre" data-ng-model="contacto.nombre" required></div>
+<div>
+    <label for="email">Email: </label>
+    <input type="email" id="email" data-ng-model="contacto.email" required></div>
+<div>
+    <label for="tel">Teléfono: </label>
+    <input type="text" id="tel" data-ng-model="contacto.tel" required></div>
+<div>
+    <input class="boton" type="submit" value="Guardar">
+    <a class="boton" href="/">Volver</a></div>
+
+  </form>
+</div>

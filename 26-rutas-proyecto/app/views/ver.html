@@ -1,0 +1,14 @@
+<div ng-controller="verController" class="vista">
+
+  <h3></h3>
+  <br>
+  <span data-ng-repeat="(key, value) in contacto">
+    <div class="contacto">
+       <strong>{{key | uppercase}}:</strong> {{value}}
+    </div>
+
+ </span>
+  <a class="boton" href="/">Volver</a>
+  <input type="button" ng-click="borrar()" value="borrar" class="boton">
+  <a class="boton" data-ng-click="editar()" href="">Editar</a>
+</div>
