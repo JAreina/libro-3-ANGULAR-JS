@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body ng-controller="FiltroCtrl">
+
+  <h1>filter currency</h1>
+  <div>Costo: {{ 1412.99 | currency }}</div>
+   <div>Costo: {{ 728.99 | currency: "€" }}</div>
+  <div>Costo: {{ 728.42963 | currency:"€":3 }}</div>
+  <div>{{costo}}</div>
+  <div>{{costoEuro}}</div>
+  <script>
+    angular.module('jareina', [])
+    .controller('FiltroCtrl', ['$scope', '$filter', function ($scope, $filter) {
+ var costo = 1453.50;
+ $scope.costo = $filter('currency')(costo);
+ $scope.costoEuro = $filter('currency')(costo, '€');
+ console.log($scope.costo,$scope.costoEuro);
+ }])
+  </script>
+</body>
+
+</html>
