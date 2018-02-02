@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body >
+
+  <h1>crear filtro</h1>
+  <h1> {{ 'este es el título de una entrada del blog' | titulo }} </h1>
+
+
+<div ng-controller="BlogCtrl">
+  <h1>usado en un controllador</h1>
+  <h1> {{  titulo2 }} </h1>
+
+</div>
+
+
+  <script>
+    angular.module('jareina', [])
+      .filter('titulo', function() {
+        return function(input) {
+          return input.split(' ')
+            .map(function(elem) {
+              return elem[0].toUpperCase() + elem.slice(1);
+            })
+            .join(' ');
+        };
+      })
+      .controller('BlogCtrl', ['$scope', '$filter',
+ function ($scope, $filter) {
+ var titulo2 = 'este es el título de otra entrada del blog';
+ $scope.titulo2 = $filter('titulo')(titulo2);
+ }]);
+  </script>
+</body>
+
+</html>
