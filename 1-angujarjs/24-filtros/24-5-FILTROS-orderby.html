@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body  ng-controller="ctrl">
+
+  <h1>filter orderby</h1>
+  <table border="1">
+   <thead> <tr>
+   <th><a href="#" data-ng-click="campo = 'nombre'; reverso=!reverso">
+   Nombre
+   </a></th>
+   <th><a href="#" data-ng-click="campo = 'apellidos'; reverso=!reverso">
+  Apellidos
+   </a></th>
+   <th><a href="#" data-ng-click="campo = 'email'; reverso=!reverso">
+   Email
+   </a></th>
+   <th>Lenguajes</th>
+   </tr> </thead>
+   <tbody>
+   <tr data-ng-repeat="usuario in usuarios | orderBy:campo:reverso">
+   <td>{{ usuario.nombre }}</td>
+   <td>{{ usuario.apellidos }}</td>
+   <td>{{ usuario.email }}</td>
+   <td>{{ usuario.lenguajes.join(',') }}</td>
+   </tr>
+   </tbody>
+   </table>
+  <script>
+    angular.module('jareina', [])
+      .controller('ctrl', ['$scope', '$filter', function ($scope) {
+        $scope.campo = 'nombre';
+        $scope.reverso = true;
+       $scope.usuarios = [
+       { nombre: "Maikel",
+       apellidos: "Rivero Dorta",
+       email: "yo@dominio.com",
+
+       lenguajes: ["en", "es"] },
+       { nombre: "john",
+       apellidos: "Doe",
+       email: "johndoe@example.com",
+       lenguajes: ["en"] },
+       { nombre: "Jane",
+       apellidos: "Doe",
+       email: "janedoe@example.com",
+       lenguajes: ["en","es"] }
+       ];
+      }])
+  </script>
+</body>
+
+</html>

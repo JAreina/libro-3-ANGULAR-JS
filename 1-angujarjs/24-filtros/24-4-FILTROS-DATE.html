@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="jareina">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="lib/angular.js"></script>
+</head>
+
+<body >
+
+  <h1>filter date</h1>
+{{ 1409323723006 | date: "dd/MM/y hh:mm:ss a" }}
+
+<hr>
+‘medium’: es equivalente a ‘MMM d, h:mm:ss a’. ej: Aug 29, 2014 10:48:43 AM<br>
+• ‘short’: es equivalente a ‘M/d/yy h:mm a’. ej: 8/29/14 10:48 AM<br>
+• ‘fullDate’: es equivalente a ‘EEEE, MMMM d,y’. ej: Friday, August 29, 2014<br>
+• ‘longDate’: es equivalente a ‘MMMM d, y’. ej: August 29, 2014<br>
+• ‘mediumDate’: es equivalente a ‘MMM d, y’. ej: Aug 29, 2014<br>
+• ‘shortDate’: es equivalente a ‘M/d/yy’. ej: 8/29/14<br>
+• ‘mediumTime’: es equivalente a ‘h:mm:ss a’. ej: 10:48:43 AM<br>
+• ‘shortTime’: es equivalente a ‘h:mm a’. ej: 10:48 AM<br>
+  <script>
+    angular.module('jareina', [])
+      .controller('ctrl', ['$scope', '$filter', function ($scope) {
+ $scope.arreglo = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+ $scope.texto = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Do\
+ lorum maxime eum perspiciatis hic corporis sapiente. Ab, provident modi deleniti\
+ assumenda nobis ratione, accusantium porro, necessitatibus similique beatae dol\
+ oremque perferendis tempora!';
+      }])
+  </script>
+</body>
+
+</html>
