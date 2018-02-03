@@ -1,0 +1,33 @@
+<div  class="vista"  ng-controller="productosController as vm">
+
+  <div class="row">
+   <div class="col-md-12 master">
+   <label for="orden">Organizar por:</label>
+   <select id="orden" name="orden" ng-model="vm.orden"
+   ng-change="vm.cambiarOrden()"
+   ng-options="orden.val as orden.texto for orden in vm.organizar">
+   </select>
+   </div>
+   </div>
+
+
+
+  <div class="row">
+ <table class="table">
+ <tr>
+ <th>Nombre</th>
+ <th>Precio</th>
+ <th>Puntos</th>
+ <th>Ventas</th>
+ </tr>
+ <tr ng-repeat="producto in vm.productos | orderBy: vm.orden">
+ <td>{{producto.nombre}}</td>
+ <td>{{producto.precio | currency}}</td>
+ <td>{{producto.puntos}}</td>
+ <td>{{producto.ventas}}</td>
+ </tr>
+ </table>
+ </div>
+
+ <a href="/">volver</a>
+</div>
