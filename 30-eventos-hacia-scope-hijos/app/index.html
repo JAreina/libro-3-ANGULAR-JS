@@ -9,10 +9,12 @@
  <body >
    <div data-ng-controller="padreController">
  <h3>Scope Padre</h3>
- {{mensaje}}
+
+
+ <button data-ng-click="click()">Click</button>
  <div data-ng-controller="hijoController">
  <h4>Scope Hijo</h4>
- <button data-ng-click="click()">Click</button>
+ {{mensaje}}
  </div>
  </div>
 

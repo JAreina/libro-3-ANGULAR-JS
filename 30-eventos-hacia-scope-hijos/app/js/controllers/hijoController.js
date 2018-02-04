@@ -1,8 +1,6 @@
 angular.module('jareina')
   .controller('hijoController', ['$scope', function($scope) {
-    $scope.click = function() {
-      $scope.$emit('eventoHijo', {
-        msg: 'Se ha hecho clic en el scope Hijo.'
-      });
-    };
+    $scope.$on('eventoPadre', function(evt, arg) {
+      $scope.mensaje = arg.msg;
+    })
   }])
