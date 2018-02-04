@@ -93,3 +93,16 @@ Scope:     componente que une controlladores y vistas
 
 
      ESTRUCTURA APP MEDIANA : https://github.com/mriverodorta/ang-starter
+
+
+
+
+ GENERAR json
+https://www.mockaroo.com/
+
+
+  ---------------- json server
+
+  https://github.com/typicode/json-server
+
+$ json-server --watch db.json
