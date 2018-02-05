@@ -10,18 +10,47 @@
 <body class="marte">
 
   <div class="container" ng-controller="mensajesController">
+
+<h1>un solo usuario </h1>
+{{uno}}
+
+<H1>NUEVO</H1>
+
+ <div class="col-md-4">
+ <h2>Nuevo mensaje</h2>
+ <form class="form-horizontal" name="nuevoMensaje"
+ role="form" ng-submit="nuevo()">
+ <div class="form-group">
+ <input type="text" ng-model="msg.usuario"
+ class="form-control" placeholder="Usuario">
+ </div>
+<div class="form-group">
+ <textarea ng-model="msg.mensaje" class="form-control"
+ rows="3" placeholder="Mensaje"></textarea>
+ </div>
+ <div class="form-group">
+ <button type="submit" class="btn btn-success">Enviar</button>
+ </div>
+ </form>
+ </div>
+
+
+
+
     <div class="row">
       <div class="col-md-12">
         <h2>Mensajes</h2>
         <table class="table table-hover">
           <thead>
             <tr>
+              <th>Núm.</th>
               <th>Usuario</th>
               <th>Mensaje</th>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="mensaje in mensajes">
+              <td>{{mensaje.id}}</td>
               <td>{{mensaje.usuario}}</td>
               <td>{{mensaje.mensaje}}</td>
             </tr>
